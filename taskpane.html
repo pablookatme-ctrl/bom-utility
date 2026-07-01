@@ -1,53 +1,50 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>BOM Utility</title>
-    <!-- Office JS 라이브러리 로드 -->
-    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
-    <link rel="stylesheet" href="taskpane.css">
-</head>
-<body class="ms-font-m">
-    <div id="container">
-        <header>
-            <h1 class="title">BOM Utility</h1>
-            <p class="subtitle">M365 전용 BOM 자동 관리 도구</p>
-        </header>
-
-        <main>
-            <div class="card">
-                <h3>BOM 관리 메뉴</h3>
-                <p class="description">실행할 작업을 선택해 주세요.</p>
-                
-                <button id="btn-group" class="btn btn-primary">
-                    <span class="btn-text">1. 그룹화 + 색상 적용</span>
-                </button>
-                
-                <button id="btn-reset" class="btn btn-secondary">
-                    <span class="btn-text">2. 그룹화/색상 초기화</span>
-                </button>
-            </div>
-
-            <!-- 진행 상태 표시줄 (VBS의 StatusBar 역할) -->
-            <div id="status-container" class="card hidden">
-                <div class="status-header">
-                    <span id="status-text">진행 대기 중...</span>
-                    <span id="status-percent">0%</span>
-                </div>
-                <div class="progress-bar">
-                    <div id="progress-fill" style="width: 0%;"></div>
-                </div>
-            </div>
-        </main>
-        
-        <footer>
-            <p class="footer-text">M365 Teams & Excel Web Add-in</p>
-        </footer>
-    </div>
-
-    <!-- 비즈니스 로직 스크립트 연결 -->
-    <script type="text/javascript" src="taskpane.js"></script>
-</body>
-</html>
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.15/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.15",
+  "id": "6b3a5c18-80f2-4f9e-9b7e-07fa483fbc3d",
+  "version": "1.0.0",
+  "developer": {
+    "name": "MyCompany",
+    "websiteUrl": "https://pablookatme-ctrl.github.io/bom-utility",
+    "privacyUrl": "https://pablookatme-ctrl.github.io/bom-utility",
+    "termsOfUseUrl": "https://pablookatme-ctrl.github.io/bom-utility"
+  },
+  "name": {
+    "short": "BOM Utility",
+    "full": "BOM Utility for Excel"
+  },
+  "description": {
+    "short": "M365 Excel BOM 자동 관리 도구",
+    "full": "M365 Excel & Teams를 위한 BOM 자동 그룹화 및 색상 관리 도구입니다."
+  },
+  "icons": {
+    "outline": "outline.png",
+    "color": "color.png"
+  },
+  "accentColor": "#107c41",
+  "configurableTabs": [],
+  "staticTabs": [],
+  "bots": [],
+  "connectors": [],
+  "permissions": [
+    "identity",
+    "messageTeamMembers"
+  ],
+  "validDomains": [
+    "pablookatme-ctrl.github.io"
+  ],
+  "webApplicationInfo": {
+    "id": "00000003-0000-0ff1-ce00-000000000000",
+    "resource": "https://pablookatme-ctrl.github.io"
+  },
+  "extensions": [
+    {
+      "id": "6b3a5c18-80f2-4f9e-9b7e-07fa483fbc3d",
+      "type": "officeAddIn",
+      "properties": {
+        "manifestVersion": "1.1",
+        "manifestUrl": "https://pablookatme-ctrl.github.io/bom-utility/manifest.xml"
+      }
+    }
+  ]
+}
